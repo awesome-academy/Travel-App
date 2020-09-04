@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Travel App</string>
+    <string name="error_default_message">Something went wrong! Please try again.</string>
 </resources>
