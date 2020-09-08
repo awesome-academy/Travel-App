@@ -1,11 +1,8 @@
 package com.sunasterisk.travelapp.ui.base
 
 import com.sunasterisk.travelapp.R
-import com.sunasterisk.travelapp.data.repository.AppRepository
 
-abstract class BasePresenter<V : BaseContract.View<*>>(
-    protected val dataSource: AppRepository
-) : BaseContract.Presenter<V> {
+abstract class BasePresenter<V : BaseContract.View<*>>: BaseContract.Presenter<V> {
 
     private var view: V? = null
 
