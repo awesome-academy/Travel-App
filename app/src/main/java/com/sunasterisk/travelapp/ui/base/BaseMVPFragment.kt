@@ -1,10 +1,8 @@
 package com.sunasterisk.travelapp.ui.base
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.sunasterisk.travelapp.R
@@ -18,9 +16,6 @@ abstract class BaseMVPFragment<T> : Fragment(), BaseContract.View<T> {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is BaseActivity) {
-            TODO("Assign App Component")
-        }
     }
 
     override fun showProgressDialog() {
