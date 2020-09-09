@@ -42,7 +42,6 @@ class HomeFragment : BaseFragment() {
     }
     
     companion object {
-        @JvmStatic
         fun newInstance() = HomeFragment()
     }
 }

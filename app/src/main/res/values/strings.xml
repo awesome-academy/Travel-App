@@ -11,4 +11,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="name_avatar">My Name</string>
     <string name="email_avatar">myemail@gmail.com</string>
+    <string name="title_travelers">Travelers</string>
+    <string name="title_select_dates">Select dates</string>
+    <string name="title_select_location">Select location</string>
+    <string name="title_destination_front_layout">Explore properties by destination</string>
+    <string name="title_destination">Aspen, United States</string>
+    <string name="title_properties">%d available properties</string>
 </resources>

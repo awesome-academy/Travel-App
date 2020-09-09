@@ -1,7 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.hotel.HotelTabFragment" />
+    android:background="@color/color_accent"
+    tools:context=".ui.home.hotel.HotelTabFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewFilterTravelers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="0dp"
+        app:layout_anchorGravity="top">
+
+        <EditText
+            android:id="@+id/editTextFilterTravelers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_travelers"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="@string/title_travelers"
+            android:padding="@dimen/dp_12"
+            android:paddingLeft="@dimen/dp_8" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewFilterDates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp_16"
+        android:translationY="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="0dp"
+        app:layout_anchor="@id/cardViewFilterTravelers"
+        app:layout_anchorGravity="bottom">
+
+        <EditText
+            android:id="@+id/editTextFilterDates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_dates"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="@string/title_select_dates"
+            android:padding="@dimen/dp_12"
+            android:paddingLeft="@dimen/dp_8" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewFilterLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/dp_16"
+        android:translationY="@dimen/dp_16"
+        app:cardCornerRadius="@dimen/dp_4"
+        app:cardElevation="0dp"
+        app:layout_anchor="@id/cardViewFilterDates"
+        app:layout_anchorGravity="bottom">
+
+        <EditText
+            android:id="@+id/editTextFilterLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_local_hotel"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="@string/title_select_location"
+            android:padding="@dimen/dp_12"
+            android:paddingLeft="@dimen/dp_8" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <include
+        android:id="@+id/layoutTabFront"
+        layout="@layout/include_hotel_tab_front"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        app:behavior_hideable="false"
+        app:layout_behavior="@string/bottom_sheet_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

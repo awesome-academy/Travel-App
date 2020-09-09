@@ -14,7 +14,8 @@ data class Location(
     val location: String,
     var thumb: String,
     var large: String,
-    var descriptionLocation: String
+    var descriptionLocation: String,
+    var propertiesNumber: Int
 ) : Parcelable {
     @Throws(JSONException::class)
     constructor(jsonObject: JSONObject, type: String, description: String) : this(
@@ -32,7 +33,8 @@ data class Location(
             .getJSONObject(IMAGES)
             .getJSONObject(LARGE_IMAGE)
             .getString(URL),
-        description
+        description,
+        -1
     )
 
     companion object {

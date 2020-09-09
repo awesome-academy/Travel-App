@@ -2,46 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_172">
+    android:layout_height="@dimen/dp_172"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_drawer_header"
+        android:src="@drawable/img_header_drawer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageAvatar"
         android:layout_width="@dimen/dp_64"
         android:layout_height="@dimen/dp_64"
         android:layout_margin="@dimen/dp_15"
+        android:src="@drawable/img_avatar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img_avatar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textNavName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name_avatar"
         android:layout_marginStart="@dimen/dp_15"
+        android:text="@string/name_avatar"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
         app:layout_constraintBottom_toTopOf="@+id/textNavEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textNavEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email_avatar"
         android:layout_margin="@dimen/dp_15"
+        android:text="@string/email_avatar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
