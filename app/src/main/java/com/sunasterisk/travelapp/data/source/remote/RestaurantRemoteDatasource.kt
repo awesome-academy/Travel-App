@@ -2,36 +2,22 @@ package com.sunasterisk.travelapp.data.source.remote
 
 import android.net.Uri
 import com.sunasterisk.travelapp.data.OnDataCallback
-import com.sunasterisk.travelapp.data.source.LocationDatasource
-import com.sunasterisk.travelapp.data.source.remote.utils.HttpUtils
+import com.sunasterisk.travelapp.data.source.RestaurantDatasource
 import com.sunasterisk.travelapp.data.source.remote.utils.RemoteAsync
 import com.sunasterisk.travelapp.utils.ApiEndpoint.BASE_URL
+import com.sunasterisk.travelapp.utils.ApiEndpoint.GET_DETAILS
 import com.sunasterisk.travelapp.utils.ApiEndpoint.LIST
 import com.sunasterisk.travelapp.utils.ApiEndpoint.SCHEMA
-import org.json.JSONException
 
-class LocationRemoteDataSource private constructor() : LocationDatasource.Remote {
-    override fun searchLocationsByProperty(
+class RestaurantRemoteDatasource private constructor() : RestaurantDatasource.Remote {
+    override fun searchRestaurantsByProperty(
         prameters: Map<String, String>,
         callback: OnDataCallback<String>
     ) {
         val uri = Uri.Builder()
             .scheme(SCHEMA)
             .authority(BASE_URL)
-            .appendPath(LOCATIONS)
-            .appendPath(SEARCH)
-        prameters.forEach {
-            uri.appendQueryParameter(it.key, it.value)
-        }
-        val url = uri.build().toString()
-        RemoteAsync(callback).execute(url)
-    }
-
-    override fun getPhotos(prameters: Map<String, String>, callback: OnDataCallback<String>) {
-        val uri = Uri.Builder()
-            .scheme(SCHEMA)
-            .authority(BASE_URL)
-            .appendPath(PHOTOS)
+            .appendPath(RESTAURANTS)
             .appendPath(LIST)
         prameters.forEach {
             uri.appendQueryParameter(it.key, it.value)
@@ -40,17 +26,31 @@ class LocationRemoteDataSource private constructor() : LocationDatasource.Remote
         RemoteAsync(callback).execute(url)
     }
 
+    override fun getDetailRestaurant(
+        prameters: Map<String, String>,
+        callback: OnDataCallback<String>
+    ) {
+        val uri = Uri.Builder()
+            .scheme(SCHEMA)
+            .authority(BASE_URL)
+            .appendPath(RESTAURANTS)
+            .appendPath(GET_DETAILS)
+        prameters.forEach {
+            uri.appendQueryParameter(it.key, it.value)
+        }
+        val url = uri.build().toString()
+        RemoteAsync(callback).execute(url)
+    }
+
     companion object {
-        private const val LOCATIONS = "locations"
-        private const val SEARCH = "search"
-        private const val PHOTOS = "photos"
+        private const val RESTAURANTS = "restaurants"
 
         @Volatile
-        private var INSTANCE: LocationRemoteDataSource? = null
+        private var INSTANCE: RestaurantRemoteDatasource? = null
 
         fun getInstance() =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: LocationRemoteDataSource().also { INSTANCE = it }
+                INSTANCE ?: RestaurantRemoteDatasource().also { INSTANCE = it }
             }
     }
 }
