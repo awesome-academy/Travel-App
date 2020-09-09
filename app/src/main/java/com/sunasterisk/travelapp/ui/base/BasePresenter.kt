@@ -14,7 +14,6 @@ abstract class BasePresenter<V : BaseContract.View<*>>: BaseContract.Presenter<V
     }
 
     override fun onDetach() {
-        // Unregister callback
         view = null
     }
 

@@ -1,18 +1,19 @@
 package com.sunasterisk.travelapp.ui.base
 
-import android.content.Intent
 import android.os.Bundle
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity : AppCompatActivity() {
 
+    @get: LayoutRes
+    protected abstract val layoutResource: Int
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        TODO("Initial App Component")
+        setContentView(layoutResource)
+        initComponent()
     }
 
-    public override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-        this.intent = intent
-    }
+    protected abstract fun initComponent()
 }
