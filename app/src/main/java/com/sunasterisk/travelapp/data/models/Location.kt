@@ -50,6 +50,15 @@ data class Location(
         private const val TYPE_GEO = "geos"
         private const val GEO_DESCRIPTION = "geo_description"
 
+        const val TABLE_NAME = "location"
+        const val ID = "Location_Id"
+        const val TYPE = "Type"
+        const val LOCATION_NAME = "Name"
+        const val LOCATION = "Location"
+        const val THUMB = "Thumb"
+        const val LARGE = "Large"
+        const val DES = "Description"
+
         fun jsonToArray(jsonArray: JSONArray): MutableList<Location> {
             val mutableList = mutableListOf<Location>()
             for (index in 0 until jsonArray.length()) {

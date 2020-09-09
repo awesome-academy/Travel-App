@@ -9,4 +9,13 @@ class Reservation(
     var arrivalTime: String,
     var numAdult: Int,
     var numChildrent: Int
-)
+) {
+    companion object {
+        const val TABLE_NAME = "reservation"
+        const val ID = "Reservation_Id"
+        const val RESTAURANT_ID = "Restaurant_Id"
+        const val ARRIVAL_TIME = "Arrival_Time"
+        const val NUM_ADULT = "Number_Adult"
+        const val NUM_CHILDRENT = "Number_Childrent"
+    }
+}
