@@ -3,12 +3,10 @@ package com.sunasterisk.travelapp.data.source.remote
 import android.net.Uri
 import com.sunasterisk.travelapp.data.OnDataCallback
 import com.sunasterisk.travelapp.data.source.LocationDatasource
-import com.sunasterisk.travelapp.data.source.remote.utils.HttpUtils
 import com.sunasterisk.travelapp.data.source.remote.utils.RemoteAsync
 import com.sunasterisk.travelapp.utils.ApiEndpoint.BASE_URL
 import com.sunasterisk.travelapp.utils.ApiEndpoint.LIST
 import com.sunasterisk.travelapp.utils.ApiEndpoint.SCHEMA
-import org.json.JSONException
 
 class LocationRemoteDataSource private constructor() : LocationDatasource.Remote {
     override fun searchLocationsByProperty(

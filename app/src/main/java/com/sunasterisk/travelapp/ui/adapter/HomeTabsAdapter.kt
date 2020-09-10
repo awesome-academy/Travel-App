@@ -19,4 +19,6 @@ class HomeTabsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         fragments.add(fragment)
         fragmentTitles.add(title)
     }
+
+
 }

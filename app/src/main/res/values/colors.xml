@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#6200EE</color>
-    <color name="color_primary_dark">#3700B3</color>
-    <color name="color_accent">#03DAC5</color>
+    <color name="color_primary">#E0E0E0</color>
+    <color name="color_primary_dark">#442C2E</color>
+    <color name="color_accent">#442C2E</color>
     <color name="color_black_effective">#2a2a2a</color>
     <color name="color_grey_40">#999999</color>
     <color name="color_grey_90">#263238</color>
+    <color name="color_divider">#1F000000</color>
 </resources>
