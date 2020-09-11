@@ -1,4 +1,4 @@
-package com.sunasterisk.travelapp.data.source.local
+package com.sunasterisk.travelapp.data.source.local.database
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -34,12 +34,14 @@ class DatabaseHelper private constructor(dbName: String, version: Int, context: 
 
         private const val SQLITE_CREATE_TABLE_LOCATION =
             "CREATE TABLE " + Location.TABLE_NAME + " (" + Location.ID +
-                    " INTEGER PRIMARY KEY " + COMA_SEP +
+                    " TEXT PRIMARY KEY " + COMA_SEP +
+                    User.ID + " INTEGER" + COMA_SEP +
                     Location.TYPE + " TEXT" + COMA_SEP +
                     Location.LOCATION_NAME + " TEXT" + COMA_SEP +
                     Location.LOCATION + " TEXT" + COMA_SEP +
                     Location.THUMB + " TEXT" + COMA_SEP +
                     Location.LARGE + " TEXT" + COMA_SEP +
+                    Location.PROPERTIES_NUMBER + " INTEGER" + COMA_SEP +
                     Location.DES + " TEXT" +
                     ")"
 
@@ -55,26 +57,26 @@ class DatabaseHelper private constructor(dbName: String, version: Int, context: 
         private const val SQLITE_CREATE_TABLE_BOOKING =
             "CREATE TABLE " + HotelBooking.TABLE_NAME + " (" + HotelBooking.ID +
                     " INTEGER PRIMARY KEY AUTOINCREMENT" + COMA_SEP +
-                    HotelBooking.HOTEL_ID + " INTEGER" + COMA_SEP +
+                    HotelBooking.HOTEL_ID + " TEXT" + COMA_SEP +
                     User.NAME + " TEXT" + COMA_SEP +
                     User.EMAIL + " TEXT" + COMA_SEP +
                     User.PHONE + " TEXT" + COMA_SEP +
                     HotelBooking.IN_DATE + " TEXT" + COMA_SEP +
                     HotelBooking.OUT_DATE + " TEXT" + COMA_SEP +
                     HotelBooking.NUM_ADULT + " INTEGER" + COMA_SEP +
-                    HotelBooking.NUM_CHILDRENT + " INTEGER" +
+                    HotelBooking.NUM_CHILDREN + " INTEGER" +
                     ")"
 
         private const val SQLITE_CREATE_TABLE_RESERVATION =
             "CREATE TABLE " + Reservation.TABLE_NAME + " (" + Reservation.ID +
                     " INTEGER PRIMARY KEY AUTOINCREMENT" + COMA_SEP +
-                    Reservation.RESTAURANT_ID + " INTEGER" + COMA_SEP +
+                    Reservation.RESTAURANT_ID + " TEXT" + COMA_SEP +
                     User.NAME + " TEXT" + COMA_SEP +
                     User.EMAIL + " TEXT" + COMA_SEP +
                     User.PHONE + " TEXT" + COMA_SEP +
                     Reservation.ARRIVAL_TIME + " TEXT" + COMA_SEP +
                     Reservation.NUM_ADULT + " INTEGER" + COMA_SEP +
-                    Reservation.NUM_CHILDRENT + " INTEGER" +
+                    Reservation.NUM_CHILDREN + " INTEGER" +
                     ")"
 
         private const val SQLITE_DELETE_TABLE_LOCATION =
@@ -92,9 +94,9 @@ class DatabaseHelper private constructor(dbName: String, version: Int, context: 
         @Volatile
         private var INSTANCE: DatabaseHelper? = null
 
-        fun getInstance(dbNam: String, version: Int, context: Context) =
+        fun getInstance(dbName: String, version: Int, context: Context) =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: DatabaseHelper(dbNam, version, context).also { INSTANCE = it }
+                INSTANCE ?: DatabaseHelper(dbName, version, context).also { INSTANCE = it }
             }
     }
 }

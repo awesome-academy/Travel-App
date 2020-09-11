@@ -1,9 +1,10 @@
 package com.sunasterisk.travelapp.data.source.remote
 
 import android.net.Uri
+import com.sunasterisk.travelapp.data.LoadDataAsync
 import com.sunasterisk.travelapp.data.OnDataCallback
 import com.sunasterisk.travelapp.data.source.LocationDatasource
-import com.sunasterisk.travelapp.data.source.remote.utils.RemoteAsync
+import com.sunasterisk.travelapp.data.source.remote.utils.HttpUtils
 import com.sunasterisk.travelapp.utils.ApiEndpoint.BASE_URL
 import com.sunasterisk.travelapp.utils.ApiEndpoint.LIST
 import com.sunasterisk.travelapp.utils.ApiEndpoint.SCHEMA
@@ -22,7 +23,9 @@ class LocationRemoteDataSource private constructor() : LocationDatasource.Remote
             uri.appendQueryParameter(it.key, it.value)
         }
         val url = uri.build().toString()
-        RemoteAsync(callback).execute(url)
+        LoadDataAsync<String, String>(callback){
+            HttpUtils.getApi(it)
+        }.execute(url)
     }
 
     override fun getPhotos(prameters: Map<String, String>, callback: OnDataCallback<String>) {
@@ -35,7 +38,9 @@ class LocationRemoteDataSource private constructor() : LocationDatasource.Remote
             uri.appendQueryParameter(it.key, it.value)
         }
         val url = uri.build().toString()
-        RemoteAsync(callback).execute(url)
+        LoadDataAsync<String, String>(callback){
+            HttpUtils.getApi(it)
+        }.execute(url)
     }
 
     companion object {
