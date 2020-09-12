@@ -2,7 +2,6 @@ package com.sunasterisk.travelapp.ui.base
 
 import android.app.Dialog
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -14,10 +13,6 @@ import com.sunasterisk.travelapp.utils.showToast
 abstract class BaseMVPActivity<T> : AppCompatActivity(), BaseContract.View<T> {
 
     private var progressDialog: Dialog? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
@@ -33,7 +28,7 @@ abstract class BaseMVPActivity<T> : AppCompatActivity(), BaseContract.View<T> {
     }
 
     override fun showToastMessage(message: String?) {
-        if (!message.isNullOrEmpty()){
+        if (!message.isNullOrEmpty()) {
             baseContext.showToast(message)
         }
     }
@@ -54,7 +49,9 @@ abstract class BaseMVPActivity<T> : AppCompatActivity(), BaseContract.View<T> {
 
     override fun onError(message: String?) {
         val msg = message ?: getString(R.string.error_default_message)
-        (this as View).showSnackBar(msg, Snackbar.LENGTH_SHORT)
+        if (this is View) {
+            showSnackBar(msg, Snackbar.LENGTH_SHORT)
+        }
     }
 
     override fun onError(resId: Int) {

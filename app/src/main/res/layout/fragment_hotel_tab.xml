@@ -17,16 +17,19 @@
         app:cardElevation="0dp"
         app:layout_anchorGravity="top">
 
-        <EditText
-            android:id="@+id/editTextFilterTravelers"
+        <TextView
+            android:id="@+id/textViewFilterTravelers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawableStart="@drawable/ic_travelers"
             android:drawablePadding="@dimen/dp_8"
             android:hint="@string/title_travelers"
             android:padding="@dimen/dp_12"
-            android:paddingLeft="@dimen/dp_8" />
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:drawableStartCompat="@drawable/ic_travelers" />
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -41,16 +44,19 @@
         app:layout_anchor="@id/cardViewFilterTravelers"
         app:layout_anchorGravity="bottom">
 
-        <EditText
-            android:id="@+id/editTextFilterDates"
+        <TextView
+            android:id="@+id/textViewFilterDates"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawableStart="@drawable/ic_dates"
             android:drawablePadding="@dimen/dp_8"
             android:hint="@string/title_select_dates"
             android:padding="@dimen/dp_12"
-            android:paddingLeft="@dimen/dp_8" />
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:drawableStartCompat="@drawable/ic_dates" />
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -66,15 +72,20 @@
         app:layout_anchorGravity="bottom">
 
         <EditText
-            android:id="@+id/editTextFilterLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_local_hotel"
             android:drawablePadding="@dimen/dp_8"
             android:hint="@string/title_select_location"
+            android:inputType="text"
             android:padding="@dimen/dp_12"
-            android:paddingLeft="@dimen/dp_8" />
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:autofillHints="" />
+
     </com.google.android.material.card.MaterialCardView>
 
     <include
@@ -82,8 +93,7 @@
         layout="@layout/include_hotel_tab_front"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginEnd="@dimen/dp_16"
         app:behavior_hideable="false"
         app:layout_behavior="@string/bottom_sheet_behavior" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

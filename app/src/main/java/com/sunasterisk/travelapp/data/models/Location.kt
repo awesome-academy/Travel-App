@@ -106,7 +106,7 @@ data class Location(
                     val locationJSONObject = jsonObject.getJSONObject(LOCATION_OBJECT)
                     var description: String
                     var propertiesNumber = 0
-                    if (TYPE_GEO.equals(type)) {
+                    if (TYPE_GEO == type) {
                         description = locationJSONObject.getString(GEO_DESCRIPTION)
                         propertiesNumber =
                             locationJSONObject

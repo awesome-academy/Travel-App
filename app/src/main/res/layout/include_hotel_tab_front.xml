@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
         android:text="@string/title_destination_front_layout"
-        android:textSize="@dimen/dp_14"
+        android:textSize="@dimen/sp_14"
         android:textColor="@color/color_grey_40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,4 +45,5 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="15"
         tools:listitem="@layout/item_destination"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

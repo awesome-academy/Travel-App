@@ -36,7 +36,7 @@ class MainActivity : BaseActivity(), HomeFragment.OnTabsSetupListener {
     }
 
     private fun initNavigationMenu() {
-        val actionBarDrawerToggle = ActionBarDrawerToggle(
+        ActionBarDrawerToggle(
             this,
             drawerMain,
             toolbar,
@@ -44,7 +44,6 @@ class MainActivity : BaseActivity(), HomeFragment.OnTabsSetupListener {
             R.string.navigation_drawer_close
         ).apply {
             syncState()
-            drawerMain.setDrawerListener(this)
         }
         drawerMain.closeDrawer(GravityCompat.START)
     }
