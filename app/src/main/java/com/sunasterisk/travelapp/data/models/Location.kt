@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import kotlin.jvm.Throws
 
 @Parcelize
 data class Location(
@@ -81,10 +82,13 @@ data class Location(
         private const val DESCRIPTION = "description"
         private const val LOCATION_TYPE = "result_type"
         private const val LOCATION_OBJECT = "result_object"
-        private const val TYPE_GEO = "geos"
         private const val GEO_DESCRIPTION = "geo_description"
         private const val CATEGORY_COUNT = "category_counts"
         private const val TOTAL = "total"
+        private const val TYPE_GEO = "geos"
+
+        const val TYPE_RESTAURANT = "restaurants"
+        const val TYPE_HOTEL = "lodging"
 
         const val TABLE_NAME = "location"
         const val ID = "location_Id"
@@ -106,7 +110,7 @@ data class Location(
                     val locationJSONObject = jsonObject.getJSONObject(LOCATION_OBJECT)
                     var description: String
                     var propertiesNumber = 0
-                    if (TYPE_GEO.equals(type)) {
+                    if (TYPE_GEO == type) {
                         description = locationJSONObject.getString(GEO_DESCRIPTION)
                         propertiesNumber =
                             locationJSONObject

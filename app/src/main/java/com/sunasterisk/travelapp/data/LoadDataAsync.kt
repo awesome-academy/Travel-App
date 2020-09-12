@@ -4,26 +4,24 @@ import android.os.AsyncTask
 
 class LoadDataAsync<T, P>(
     private val callbackListener: OnDataCallback<P>,
-    private val handler: (T) -> Any
-) : AsyncTask<T, Unit, Any>() {
-    override fun doInBackground(vararg params: T): Any =
+    private val handler: (T) -> P?
+) : AsyncTask<T, Unit, P?>() {
+
+    private var exception: Exception? = null
+
+    override fun doInBackground(vararg params: T): P? =
         try {
             handler(params[0])
         } catch (exception: Exception) {
-            exception
+            this.exception = exception
+            null
         }
 
-    override fun onPostExecute(result: Any) {
+    override fun onPostExecute(result: P?) {
         super.onPostExecute(result)
-        try {
-            if (result is Throwable) {
-                callbackListener.onError(result)
-            } else {
-                callbackListener.onSuccess(result as P)
-            }
-        } catch (exception: ClassCastException) {
-            callbackListener.onError(Exception(EXCEPTION))
-        }
+        result?.let {
+            callbackListener.onSuccess(it)
+        } ?: callbackListener.onError(exception ?: Exception(EXCEPTION))
     }
 
     companion object {

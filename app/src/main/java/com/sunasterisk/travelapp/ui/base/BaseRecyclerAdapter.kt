@@ -14,7 +14,7 @@ abstract class BaseRecyclerAdapter<T, V : BaseViewHolder<T>> : RecyclerView.Adap
         }
     }
 
-    protected fun getItem(position: Int): T? =
+    private fun getItem(position: Int): T? =
         if (position in 0 until itemCount) items[position] else null
 
     fun updateData(newItems: List<T>) {

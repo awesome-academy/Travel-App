@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayoutListHotelTab"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowGroupTab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_4"
+        android:layout_marginEnd="@dimen/dp_4"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:paddingStart="@dimen/dp_4"
+        app:constraint_referenced_ids="
+        materialButtonPersonPick, materialButtonDateRangePick,
+        materialButtonLocationPick"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_editor_absoluteX="@dimen/dp_12" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonPersonPick"
+        style="@style/Widget.TravelApp.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:focusableInTouchMode="false"
+        android:maxLines="1"
+        android:textColor="@android:color/darker_gray"
+        app:icon="@drawable/ic_person"
+        app:iconGravity="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonDateRangePick"
+        style="@style/Widget.TravelApp.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/dp_4"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonLocationPick"
+        style="@style/Widget.TravelApp.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="@dimen/dp_4"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

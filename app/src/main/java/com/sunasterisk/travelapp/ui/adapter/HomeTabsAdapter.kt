@@ -20,5 +20,4 @@ class HomeTabsAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         fragmentTitles.add(title)
     }
 
-
 }

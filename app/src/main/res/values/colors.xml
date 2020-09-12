@@ -7,4 +7,6 @@
     <color name="color_grey_40">#999999</color>
     <color name="color_grey_90">#263238</color>
     <color name="color_divider">#1F000000</color>
+    <color name="color_yellow">#FEBA39</color>
+    <color name="color_pink">#FC4253</color>
 </resources>

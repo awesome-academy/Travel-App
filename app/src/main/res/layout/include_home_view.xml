@@ -2,7 +2,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinatorHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,8 +23,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:tabIndicator="@drawable/ic_tabs_pill_indicator"
-                app:tabIndicatorGravity="stretch" />
+                app:tabIndicatorGravity="stretch"
+                app:tabRippleColor="@color/color_accent"
+                app:tabSelectedTextColor="@color/color_accent"
+                app:tabTextColor="@android:color/white"
+                app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
         </androidx.appcompat.widget.Toolbar>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -33,4 +38,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

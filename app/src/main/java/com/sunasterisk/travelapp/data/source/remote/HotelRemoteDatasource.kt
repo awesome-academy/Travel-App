@@ -3,7 +3,6 @@ package com.sunasterisk.travelapp.data.source.remote
 import android.net.Uri
 import com.sunasterisk.travelapp.data.LoadDataAsync
 import com.sunasterisk.travelapp.data.OnDataCallback
-import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.data.source.HotelDatasource
 import com.sunasterisk.travelapp.data.source.remote.utils.HttpUtils
 import com.sunasterisk.travelapp.utils.ApiEndpoint.BASE_URL
