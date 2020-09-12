@@ -5,7 +5,6 @@ import com.bumptech.glide.Glide
 import com.sunasterisk.travelapp.R
 import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.ui.base.BaseViewHolder
-import com.sunasterisk.travelapp.utils.showToast
 import kotlinx.android.synthetic.main.item_destination.view.*
 
 class HotelDestinationViewHolder(
@@ -22,5 +21,5 @@ class HotelDestinationViewHolder(
         }
     }
 
-    override fun onHandleItemCLick(location: Location) = Unit
+    override fun onHandleItemCLick(mainItem: Location) = Unit
 }

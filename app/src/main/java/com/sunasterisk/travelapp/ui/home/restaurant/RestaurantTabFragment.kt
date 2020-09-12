@@ -11,7 +11,6 @@ class RestaurantTabFragment : BaseFragment() {
 
     companion object {
         const val TITLE = "EAT"
-        @JvmStatic
         fun newInstance() = RestaurantTabFragment()
     }
 }

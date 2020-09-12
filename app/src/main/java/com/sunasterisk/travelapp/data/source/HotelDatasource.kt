@@ -14,7 +14,4 @@ interface HotelDatasource {
             callback: OnDataCallback<String>
         )
     }
-
-    interface Local {
-    }
 }

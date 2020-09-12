@@ -14,7 +14,4 @@ interface RestaurantDatasource {
             callback: OnDataCallback<String>
         )
     }
-
-    interface Local {
-    }
 }

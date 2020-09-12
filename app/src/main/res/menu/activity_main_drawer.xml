@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group
-        android:id="@+id/group1"
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/item_home"
-            android:title="@string/title_home_menu_item" />
-        <item
-            android:id="@+id/navFindTrips"
-            android:title="@string/title_find_trips_menu_item" />
-        <item
-            android:id="@+id/item_my_trips"
-            android:title="@string/title_my_trips_menu_item" />
-        <item
-            android:id="@+id/item_saved_trips"
-            android:title="@string/title_saved_trips_menu_item" />
-        <item
-            android:id="@+id/item_reservation"
-            android:title="@string/title_reservation_menu_item" />
+        <item android:title="@string/title_home_menu_item" />
+        <item android:title="@string/title_find_trips_menu_item" />
+        <item android:title="@string/title_my_trips_menu_item" />
+        <item android:title="@string/title_saved_trips_menu_item" />
+        <item android:title="@string/title_reservation_menu_item" />
     </group>
-    <group
-        android:id="@+id/group2"
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/item_settings"
-            android:title="@string/title_settings_menu_item" />
+        <item android:title="@string/title_settings_menu_item" />
     </group>
 </menu>

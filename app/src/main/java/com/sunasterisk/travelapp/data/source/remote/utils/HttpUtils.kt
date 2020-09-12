@@ -27,18 +27,18 @@ object HttpUtils {
                 connectTimeout = CONNECT_TIMEOUT
                 readTimeout = READ_TIMEOUT
                 setRequestProperty(RAPIDAPI_KEY, KEY_API)
-                if (responseCode == HttpURLConnection.HTTP_OK) {
+                result = if (responseCode == HttpURLConnection.HTTP_OK) {
                     val bufferedReader =
                         BufferedReader(InputStreamReader(inputStream))
                     val buffer = StringBuffer()
-                   bufferedReader.forEachLine {
-                       buffer.append(it)
-                   }
+                    bufferedReader.forEachLine {
+                        buffer.append(it)
+                    }
                     bufferedReader.close()
                     inputStream.close()
-                    result = buffer.toString()
+                    buffer.toString()
                 } else {
-                    result = NetworkErrorException("$responseCode")
+                    NetworkErrorException("$responseCode")
                 }
             }
         } catch (e: MalformedURLException) {

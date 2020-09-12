@@ -11,7 +11,6 @@
     <include layout="@layout/include_home_view" />
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -21,4 +20,5 @@
         app:itemTextAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:itemTextColor="@color/color_grey_40"
         app:menu="@menu/activity_main_drawer" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

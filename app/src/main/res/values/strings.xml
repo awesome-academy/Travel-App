@@ -17,4 +17,9 @@
     <string name="title_destination_front_layout">Explore properties by destination</string>
     <string name="title_destination">Aspen, United States</string>
     <string name="title_properties">%d available properties</string>
+    <string name="title_adults">Adults</string>
+    <string name="title_children">Children</string>
+    <string name="title_count_number">3</string>
+    <string name="title_button_apply">Apply</string>
+    <string name="title_button_cancel">Cancel</string>
 </resources>
