@@ -17,7 +17,6 @@ data class Hotel(
     var price: String = "",
     var descriptionHotel: String = ""
 ) : Parcelable {
-
     @Throws(JSONException::class)
     constructor(jsonObject: JSONObject) : this(
         jsonObject.getString(LOCATION_ID),

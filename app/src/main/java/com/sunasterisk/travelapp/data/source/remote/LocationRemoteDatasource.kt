@@ -9,7 +9,7 @@ import com.sunasterisk.travelapp.utils.ApiEndpoint.BASE_URL
 import com.sunasterisk.travelapp.utils.ApiEndpoint.LIST
 import com.sunasterisk.travelapp.utils.ApiEndpoint.SCHEMA
 
-class LocationRemoteDataSource private constructor() : LocationDatasource.Remote {
+class LocationRemoteDatasource private constructor() : LocationDatasource.Remote {
     override fun searchLocationsByProperty(
         prameters: Map<String, String>,
         callback: OnDataCallback<String>
@@ -49,11 +49,11 @@ class LocationRemoteDataSource private constructor() : LocationDatasource.Remote
         private const val PHOTOS = "photos"
 
         @Volatile
-        private var INSTANCE: LocationRemoteDataSource? = null
+        private var INSTANCE: LocationRemoteDatasource? = null
 
         fun getInstance() =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: LocationRemoteDataSource().also { INSTANCE = it }
+                INSTANCE ?: LocationRemoteDatasource().also { INSTANCE = it }
             }
     }
 }

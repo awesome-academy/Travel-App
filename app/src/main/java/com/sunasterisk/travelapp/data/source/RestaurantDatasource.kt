@@ -1,6 +1,8 @@
 package com.sunasterisk.travelapp.data.source
 
 import com.sunasterisk.travelapp.data.OnDataCallback
+import com.sunasterisk.travelapp.data.models.Hotel
+import com.sunasterisk.travelapp.data.models.Restaurant
 
 interface RestaurantDatasource {
     interface Remote {
@@ -13,5 +15,10 @@ interface RestaurantDatasource {
             prameters: Map<String, String>,
             callback: OnDataCallback<String>
         )
+    }
+
+    interface Local {
+        fun insertLocation(restaurant: Restaurant, callback: OnDataCallback<Boolean>)
+        fun getDefaultParams(): Map<String, String>
     }
 }
