@@ -7,6 +7,7 @@ import com.sunasterisk.travelapp.data.source.UserDataSource
 class UserRepositoryImpl private constructor(
     private val local: UserDataSource.Local
 ) : UserRepository {
+
     override fun addUser(user: User, callback: OnDataCallback<Boolean>) {
         local.addUser(user, callback)
     }

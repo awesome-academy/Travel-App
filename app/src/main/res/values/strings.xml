@@ -14,6 +14,8 @@
     <string name="title_travelers">Travelers</string>
     <string name="title_select_dates">Select dates</string>
     <string name="title_select_location">Select location</string>
+    <string name="title_meal_type">Select meal</string>
+    <string name="title_restaurant_type">Select restaurant</string>
     <string name="title_destination_front_layout">Explore properties by destination</string>
     <string name="title_destination">Aspen, United States</string>
     <string name="title_properties">%d available properties</string>

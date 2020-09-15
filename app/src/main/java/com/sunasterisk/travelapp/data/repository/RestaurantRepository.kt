@@ -4,11 +4,12 @@ import com.sunasterisk.travelapp.data.OnDataCallback
 import com.sunasterisk.travelapp.data.models.Restaurant
 
 interface RestaurantRepository {
+
     fun searchRestaurantsByProperty(
         latitude: String,
         longtitude: String,
-        mealType: String?,
-        restaurantType: String?,
+        mealType: String? = null,
+        restaurantType: String? = null,
         callback: OnDataCallback<List<Restaurant>>
     )
 
@@ -18,5 +19,6 @@ interface RestaurantRepository {
     )
 
     fun insertLocation(restaurant: Restaurant, callback: OnDataCallback<Boolean>)
+
     fun getDefaultParams(): MutableMap<String, String>
 }

@@ -15,6 +15,7 @@ class RestaurantRepositoryImpl private constructor(
     private val local: RestaurantDatasource.Local,
     private val remote: RestaurantDatasource.Remote
 ) : RestaurantRepository {
+
     override fun searchRestaurantsByProperty(
         latitude: String,
         longtitude: String,

@@ -7,6 +7,7 @@ import com.sunasterisk.travelapp.data.source.ReservationDataSource
 class ReservationRepositoryImpl private constructor(
     private val local: ReservationDataSource.Local
 ) : ReservationRepository {
+
     override fun insertReservation(reservation: Reservation, callback: OnDataCallback<Boolean>) {
         local.insertReservation(reservation, callback)
     }

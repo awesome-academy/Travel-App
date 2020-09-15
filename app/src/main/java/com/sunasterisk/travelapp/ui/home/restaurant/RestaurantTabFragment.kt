@@ -10,7 +10,7 @@ class RestaurantTabFragment : BaseFragment() {
     override fun initComponents() = Unit
 
     companion object {
-        const val TITLE = "EAT"
+        const val TITLE = "Eat"
         fun newInstance() = RestaurantTabFragment()
     }
 }
