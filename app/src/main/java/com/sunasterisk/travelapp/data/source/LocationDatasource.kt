@@ -9,7 +9,7 @@ interface LocationDatasource {
         fun insertLocation(location: Location, callback: OnDataCallback<Boolean>)
         fun getAllLocations(callback: OnDataCallback<List<Location>>)
         fun deleteLocation(location: Location, callback: OnDataCallback<Boolean>)
-        fun getDefaultParams(): Map<String, String>
+        fun getDefaultParams(): MutableMap<String, String>
     }
 
     interface Remote {

@@ -8,5 +8,6 @@ interface UserDataSource {
         fun addUser(user: User, callback: OnDataCallback<Boolean>)
         fun isUser(email: String, password: String, onDataCallback: OnDataCallback<User>)
         fun setCurrentUser(user: User)
+        fun getCurrentUser(): User
     }
 }

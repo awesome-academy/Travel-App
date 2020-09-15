@@ -18,6 +18,6 @@ interface HotelDatasource {
 
     interface Local {
         fun insertLocation(hotel: Hotel, callback: OnDataCallback<Boolean>)
-        fun getDefaultParams(): Map<String, String>
+        fun getDefaultParams(): MutableMap<String, String>
     }
 }

@@ -11,6 +11,8 @@ import org.json.JSONObject
 @Parcelize
 data class Location(
     val id: String,
+    val latitude: String = "",
+    val longitude: String = "",
     val type: String,
     val name: String,
     val location: String,
@@ -27,6 +29,8 @@ data class Location(
         propertiesNumber: Int
     ) : this(
         jsonObject.getString(LOCATION_ID),
+        jsonObject.getString(LATITUDE),
+        jsonObject.getString(LONGTITUDE),
         type,
         jsonObject.getString(NAME),
         jsonObject.getString(LOCATION_STRING),
@@ -45,14 +49,14 @@ data class Location(
     )
 
     constructor(cursor: Cursor) : this(
-        cursor.getString(cursor.getColumnIndex(ID)),
-        cursor.getString(cursor.getColumnIndex(LOCATION_NAME)),
-        cursor.getString(cursor.getColumnIndex(TYPE)),
-        cursor.getString(cursor.getColumnIndex(LOCATION)),
-        cursor.getString(cursor.getColumnIndex(THUMB)),
-        cursor.getString(cursor.getColumnIndex(LARGE)),
-        cursor.getString(cursor.getColumnIndex(DES)),
-        cursor.getInt(cursor.getColumnIndex(PROPERTIES_NUMBER))
+        id = cursor.getString(cursor.getColumnIndex(ID)),
+        type = cursor.getString(cursor.getColumnIndex(TYPE)),
+        name = cursor.getString(cursor.getColumnIndex(LOCATION_NAME)),
+        location = cursor.getString(cursor.getColumnIndex(LOCATION)),
+        thumb = cursor.getString(cursor.getColumnIndex(THUMB)),
+        large = cursor.getString(cursor.getColumnIndex(LARGE)),
+        descriptionLocation = cursor.getString(cursor.getColumnIndex(DES)),
+        propertiesNumber = cursor.getInt(cursor.getColumnIndex(PROPERTIES_NUMBER))
     )
 
     fun getValue(user: User): ContentValues =
@@ -70,6 +74,8 @@ data class Location(
 
     companion object {
         private const val LOCATION_ID = "location_id"
+        private const val LONGTITUDE = "longitude"
+        private const val LATITUDE = "latitude"
         private const val NAME = "name"
         private const val LOCATION_STRING = "location_string"
         private const val RESTAURANTS = "restaurants"
@@ -84,8 +90,8 @@ data class Location(
         private const val GEO_DESCRIPTION = "geo_description"
         private const val CATEGORY_COUNT = "category_counts"
         private const val TOTAL = "total"
-        private const val TYPE_GEO = "geos"
 
+        const val TYPE_GEO = "geos"
         const val TYPE_RESTAURANT = "restaurants"
         const val TYPE_HOTEL = "lodging"
 

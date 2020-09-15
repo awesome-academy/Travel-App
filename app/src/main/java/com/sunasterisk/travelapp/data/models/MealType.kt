@@ -6,7 +6,7 @@ import com.sunasterisk.travelapp.data.models.Type.BRUNCH_TYPE
 import com.sunasterisk.travelapp.data.models.Type.DINNER_TYPE
 import com.sunasterisk.travelapp.data.models.Type.LUNCH_TYPE
 
-enum class MealType(val value: Int) {
+enum class MealType(val value: String) {
     Breakfast(BREAKFAST_TYPE),
     Brunch(BRUNCH_TYPE),
     Lunch(LUNCH_TYPE),
@@ -15,9 +15,9 @@ enum class MealType(val value: Int) {
 }
 
 object Type {
-    const val BREAKFAST_TYPE = 10597
-    const val BRUNCH_TYPE = 10606
-    const val LUNCH_TYPE = 10598
-    const val DINNER_TYPE = 10599
-    const val ALL_TYPE = 0
+    const val BREAKFAST_TYPE = "10597"
+    const val BRUNCH_TYPE = "10606"
+    const val LUNCH_TYPE = "10598"
+    const val DINNER_TYPE = "10599"
+    const val ALL_TYPE = "-1"
 }

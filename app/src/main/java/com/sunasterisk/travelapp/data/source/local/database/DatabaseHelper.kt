@@ -8,9 +8,8 @@ import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.data.models.Reservation
 import com.sunasterisk.travelapp.data.models.User
 
-class DatabaseHelper private constructor(dbName: String, version: Int, context: Context) :
+class DatabaseHelper private constructor(context: Context, dbName: String, version: Int) :
     SQLiteOpenHelper(context, dbName, null, version) {
-
     override fun onCreate(sqLiteDatabase: SQLiteDatabase?) {
         sqLiteDatabase?.run {
             execSQL(SQLITE_CREATE_TABLE_LOCATION)
@@ -30,6 +29,8 @@ class DatabaseHelper private constructor(dbName: String, version: Int, context: 
     }
 
     companion object {
+        private const val DB_NAME = "traveldb"
+        private const val DB_VERSION = 1
         private const val COMA_SEP = ","
 
         private const val SQLITE_CREATE_TABLE_LOCATION =
@@ -94,9 +95,9 @@ class DatabaseHelper private constructor(dbName: String, version: Int, context: 
         @Volatile
         private var INSTANCE: DatabaseHelper? = null
 
-        fun getInstance(dbName: String, version: Int, context: Context) =
+        fun getInstance(context: Context) =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: DatabaseHelper(dbName, version, context).also { INSTANCE = it }
+                INSTANCE ?: DatabaseHelper(context, DB_NAME, DB_VERSION).also { INSTANCE = it }
             }
     }
 }
