@@ -31,7 +31,7 @@ class LocationLocalDatasource private constructor(
         }.execute(Unit)
     }
 
-    override fun getDefaultParams(): Map<String, String> {
+    override fun getDefaultParams(): MutableMap<String, String> {
         val setting = preference.getSetting()
         return mutableMapOf(
             LANGUAGE to setting.language,

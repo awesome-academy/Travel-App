@@ -19,6 +19,6 @@ interface RestaurantDatasource {
 
     interface Local {
         fun insertLocation(restaurant: Restaurant, callback: OnDataCallback<Boolean>)
-        fun getDefaultParams(): Map<String, String>
+        fun getDefaultParams(): MutableMap<String, String>
     }
 }

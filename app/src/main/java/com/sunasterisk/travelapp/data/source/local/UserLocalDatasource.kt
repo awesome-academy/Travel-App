@@ -28,6 +28,8 @@ class UserLocalDatasource private constructor(
         preference.setCurrentUser(user)
     }
 
+    override fun getCurrentUser(): User = preference.getCurrentUser()
+
     companion object {
         @Volatile
         private var instance: UserLocalDatasource? = null

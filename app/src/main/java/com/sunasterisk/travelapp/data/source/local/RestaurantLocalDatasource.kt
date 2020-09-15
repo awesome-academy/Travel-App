@@ -5,7 +5,9 @@ import com.sunasterisk.travelapp.data.OnDataCallback
 import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.data.models.Location.Companion.TYPE_RESTAURANT
+import com.sunasterisk.travelapp.data.models.Restaurant
 import com.sunasterisk.travelapp.data.source.HotelDatasource
+import com.sunasterisk.travelapp.data.source.RestaurantDatasource
 import com.sunasterisk.travelapp.data.source.local.dao.LocationFavouriteDAO
 import com.sunasterisk.travelapp.data.source.local.preferences.PreferencesHelper
 import com.sunasterisk.travelapp.utils.ApiEndpoint.CURRENCY
@@ -14,23 +16,23 @@ import com.sunasterisk.travelapp.utils.ApiEndpoint.LANGUAGE
 class RestaurantLocalDatasource private constructor(
     private val locationDAO: LocationFavouriteDAO,
     private val preference: PreferencesHelper
-) : HotelDatasource.Local {
-    override fun insertLocation(hotel: Hotel, callback: OnDataCallback<Boolean>) {
+) : RestaurantDatasource.Local {
+    override fun insertLocation(restaurant: Restaurant, callback: OnDataCallback<Boolean>) {
         val location = Location(
-            hotel.id,
-            TYPE_RESTAURANT,
-            hotel.name,
-            hotel.address,
-            hotel.imageThumbHotel,
-            hotel.imageLargeHotel,
-            hotel.descriptionHotel
+            id = restaurant.id,
+            type = TYPE_RESTAURANT,
+            name = restaurant.name,
+            location = restaurant.address,
+            thumb = restaurant.imageThumbRestaurant,
+            large = restaurant.imageLargeRestaurant,
+            descriptionLocation = restaurant.descriptionRestaurant
         )
         LoadDataAsync<Location, Boolean>(callback) {
             locationDAO.insertLocationFavourite(location, preference.getCurrentUser())
         }
     }
 
-    override fun getDefaultParams(): Map<String, String> {
+    override fun getDefaultParams(): MutableMap<String, String> {
         val setting = preference.getSetting()
         return mutableMapOf(
             LANGUAGE to setting.language,

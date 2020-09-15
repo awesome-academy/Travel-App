@@ -17,20 +17,20 @@ class HotelLocalDatasource private constructor(
 ) : HotelDatasource.Local {
     override fun insertLocation(hotel: Hotel, callback: OnDataCallback<Boolean>) {
         val location = Location(
-            hotel.id,
-            TYPE_HOTEL,
-            hotel.name,
-            hotel.address,
-            hotel.imageThumbHotel,
-            hotel.imageLargeHotel,
-            hotel.descriptionHotel
+            id = hotel.id,
+            type = TYPE_HOTEL,
+            name = hotel.name,
+            location = hotel.address,
+            thumb = hotel.imageThumbHotel,
+            large = hotel.imageLargeHotel,
+            descriptionLocation = hotel.descriptionHotel
         )
         LoadDataAsync<Unit, Boolean>(callback) {
             locationDAO.insertLocationFavourite(location, preference.getCurrentUser())
         }.execute(Unit)
     }
 
-    override fun getDefaultParams(): Map<String, String> {
+    override fun getDefaultParams(): MutableMap<String, String> {
         val setting = preference.getSetting()
         return mutableMapOf(
             LANGUAGE to setting.language,
