@@ -1,31 +1,37 @@
 package com.sunasterisk.travelapp.ui.home.hotel
 
+import android.content.Context
+import android.content.Intent
 import android.view.View
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.datepicker.MaterialDatePicker.Builder.dateRangePicker
 import com.sunasterisk.travelapp.R
+import com.sunasterisk.travelapp.data.models.DestinationFilter
+import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.ui.adapter.HotelDestinationsAdapter
 import com.sunasterisk.travelapp.ui.base.BaseFragment
+import com.sunasterisk.travelapp.ui.list.hotel.HotelListActivity
 import com.sunasterisk.travelapp.utils.location
 import com.sunasterisk.travelapp.utils.screenHeight
 import kotlinx.android.synthetic.main.fragment_hotel_tab.*
 import kotlinx.android.synthetic.main.include_hotel_tab_front.*
+import kotlinx.android.synthetic.main.item_destination.*
 import java.util.*
 
 class HotelTabFragment private constructor() : BaseFragment(), View.OnClickListener {
+
+    private val adapter = HotelDestinationsAdapter { item -> onClick(item) }
 
     override val layoutResource get() = R.layout.fragment_hotel_tab
 
     override fun initComponents() {
         configureFrontLayout()
         initViews()
-        setupDestinationList()
+        initDestinationList()
     }
 
-    private fun setupDestinationList() {
-        HotelDestinationsAdapter().apply {
-            recyclerViewDestination.adapter = this
-        }
+    private fun initDestinationList() {
+        recyclerViewDestination.adapter = adapter
     }
 
     private fun initViews() {
@@ -59,9 +65,32 @@ class HotelTabFragment private constructor() : BaseFragment(), View.OnClickListe
         }
     }
 
+    private fun onClick(item: Location) {
+        context?.apply {
+            val intent = getTabNameIntent(this, item)
+            startActivity(intent)
+        }
+    }
+
     companion object {
         const val TITLE = "Sleep"
+        const val EXTRA_PERSON_TAB = "EXTRA_PERSON_TAB"
+        const val EXTRA_DATE_RANGE_TAB = "EXTRA_DATE_RANGE_TAB"
+        const val EXTRA_LOCATION_TAB = "EXTRA_LOCATION_TAB"
+
         fun newInstance() = HotelTabFragment()
+        fun getTabNameIntent(context: Context, location: Location) =
+            Intent(context, HotelListActivity::class.java).apply {
+                putExtra(
+                    EXTRA_PERSON_TAB,
+                    context.resources.getQuantityString(
+                        R.plurals.title_filter_travelers,
+                        context.resources.getInteger(R.integer.integer_1),
+                        DestinationFilter.adultCount, DestinationFilter.childrenCount))
+                putExtra(EXTRA_DATE_RANGE_TAB, DestinationFilter.dateRange)
+                putExtra(EXTRA_LOCATION_TAB, location.name)
+            }
+
     }
 
     override fun onClick(view: View?) {

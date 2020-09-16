@@ -16,10 +16,18 @@
     <string name="title_select_location">Select location</string>
     <string name="title_destination_front_layout">Explore properties by destination</string>
     <string name="title_destination">Aspen, United States</string>
-    <string name="title_properties">%d available properties</string>
+    <plurals name="title_properties">
+        <item quantity="other">%1$d available properties</item>
+    </plurals>
+    <plurals name="title_filter_travelers">
+        <item quantity="other">%1$d adults, %2$d children</item>
+    </plurals>
+    <string name="title_type">Apartment</string>
     <string name="title_adults">Adults</string>
     <string name="title_children">Children</string>
     <string name="title_count_number">3</string>
     <string name="title_button_apply">Apply</string>
     <string name="title_button_cancel">Cancel</string>
+    <string name="title_transition_type_y">translationY</string>
+    <string name="title_cost">54$</string>
 </resources>

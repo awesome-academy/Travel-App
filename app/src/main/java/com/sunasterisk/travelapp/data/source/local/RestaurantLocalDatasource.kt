@@ -6,7 +6,6 @@ import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.data.models.Location.Companion.TYPE_RESTAURANT
 import com.sunasterisk.travelapp.data.models.Restaurant
-import com.sunasterisk.travelapp.data.source.HotelDatasource
 import com.sunasterisk.travelapp.data.source.RestaurantDatasource
 import com.sunasterisk.travelapp.data.source.local.dao.LocationFavouriteDAO
 import com.sunasterisk.travelapp.data.source.local.preferences.PreferencesHelper

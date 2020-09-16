@@ -13,3 +13,11 @@ fun View.location(): Point {
     this.getLocationOnScreen(location)
     return Point(location[0], location[1])
 }
+
+fun View.show() {
+    this.visibility = View.VISIBLE
+}
+
+fun View.gone() {
+    this.visibility = View.GONE
+}

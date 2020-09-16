@@ -8,18 +8,18 @@ import com.sunasterisk.travelapp.ui.base.BaseViewHolder
 import kotlinx.android.synthetic.main.item_destination.view.*
 
 class HotelDestinationViewHolder(
-    itemView: View
-) : BaseViewHolder<Location>(itemView) {
+    itemView: View,
+    onItemClick: (Location) -> Unit
+) : BaseViewHolder<Location>(itemView, onItemClick) {
 
     override fun onBindData(itemData: Location) {
         super.onBindData(itemData)
         with(itemView) {
             textViewDestinationNameItem.text = itemData.name
             textViewPropertiesItem.text =
-                resources.getString(R.string.title_properties, itemData.propertiesNumber)
+                resources.getQuantityString(R.plurals.title_properties,
+                    resources.getInteger(R.integer.integer_1), itemData.propertiesNumber)
             Glide.with(context).load(itemData.thumb).into(imageDestinationItem)
         }
     }
-
-    override fun onHandleItemCLick(mainItem: Location) = Unit
 }
