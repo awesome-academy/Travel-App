@@ -4,12 +4,13 @@ import com.sunasterisk.travelapp.data.OnDataCallback
 import com.sunasterisk.travelapp.data.models.Hotel
 
 interface HotelRepository {
+
     fun searchHotelsByProperty(
         latitude: String,
-        longitude: String,
-        checkInDate: String?,
-        adults: Int?,
-        childrent: Int?,
+        longtitude: String,
+        checkInDate: String? = null,
+        adults: Int? = null,
+        childrens: Int? = null,
         callback: OnDataCallback<List<Hotel>>
     )
 
@@ -19,5 +20,6 @@ interface HotelRepository {
     )
 
     fun insertLocation(hotel: Hotel, callback: OnDataCallback<Boolean>)
+
     fun getDefaultParams(): Map<String, String>
 }

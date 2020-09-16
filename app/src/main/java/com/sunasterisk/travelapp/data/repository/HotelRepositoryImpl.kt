@@ -17,6 +17,7 @@ class HotelRepositoryImpl private constructor(
     private val local: HotelDatasource.Local,
     private val remote: HotelDatasource.Remote
 ) : HotelRepository {
+
     override fun searchHotelsByProperty(
         latitude: String,
         longtitude: String,
@@ -59,7 +60,7 @@ class HotelRepositoryImpl private constructor(
 
     override fun getDetailHotel(locationId: String, callback: OnDataCallback<Hotel>) {
         val parameters = getDefaultParams()
-        parameters.put(LOCATION_ID, locationId)
+        parameters[LOCATION_ID] = locationId
         remote.getDetailHotel(parameters, object : OnDataCallback<String> {
             override fun onSuccess(data: String) {
                 try {

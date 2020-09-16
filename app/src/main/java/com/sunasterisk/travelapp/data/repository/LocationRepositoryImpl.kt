@@ -13,12 +13,13 @@ class LocationRepositoryImpl private constructor(
     private val local: LocationDatasource.Local,
     private val remote: LocationDatasource.Remote
 ) : LocationRepository {
+
     override fun searchLocationsByProperty(
         query: String,
         callback: OnDataCallback<List<Location>>
     ) {
         val parameters = getDefaultParams()
-        parameters.put(QUERY, query)
+        parameters[QUERY] = query
         remote.searchLocationsByProperty(parameters, object : OnDataCallback<String> {
             override fun onSuccess(data: String) {
                 try {
@@ -39,7 +40,7 @@ class LocationRepositoryImpl private constructor(
 
     override fun getPhotos(locationId: String, callback: OnDataCallback<List<String>>) {
         val params = getDefaultParams()
-        params.put(LOCATION_ID, locationId)
+        params[LOCATION_ID] = locationId
         remote.getPhotos(params, object : OnDataCallback<String> {
             override fun onSuccess(data: String) {
                 try {
