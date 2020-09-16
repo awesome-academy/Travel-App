@@ -74,6 +74,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_local_hotel"
             android:drawablePadding="@dimen/dp_8"
@@ -83,8 +84,7 @@
             android:paddingLeft="@dimen/dp_8"
             android:paddingRight="@dimen/dp_8"
             android:singleLine="true"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:autofillHints="" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
     </com.google.android.material.card.MaterialCardView>
 

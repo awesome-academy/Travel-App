@@ -21,7 +21,7 @@ class MainActivity : BaseActivity(), HomeFragment.OnTabsSetupListener {
         }
     }
 
-    override fun initComponent() {
+    override fun initComponents() {
         replaceFragmentInActivity(HomeFragment.newInstance(), R.id.frameMain)
         initToolbar()
         initNavigationMenu()

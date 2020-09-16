@@ -1,7 +1,6 @@
 package com.sunasterisk.travelapp.data.source
 
 import com.sunasterisk.travelapp.data.OnDataCallback
-import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.data.models.Restaurant
 
 interface RestaurantDatasource {

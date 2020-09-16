@@ -32,6 +32,7 @@
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
             android:layout_gravity="start"
+            android:contentDescription="@null"
             android:padding="@dimen/dp_6"
             android:src="@drawable/ic_remove"
             app:tint="@android:color/black" />
@@ -47,6 +48,7 @@
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
             android:layout_gravity="end"
+            android:contentDescription="@null"
             android:padding="@dimen/dp_6"
             android:src="@drawable/ic_add"
             app:tint="@android:color/black" />
@@ -90,6 +92,7 @@
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
             android:layout_gravity="start"
+            android:contentDescription="@null"
             android:padding="@dimen/dp_6"
             android:src="@drawable/ic_remove"
             app:tint="@android:color/black" />
@@ -105,6 +108,7 @@
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
             android:layout_gravity="end"
+            android:contentDescription="@null"
             android:padding="@dimen/dp_6"
             android:src="@drawable/ic_add"
             app:tint="@android:color/black" />

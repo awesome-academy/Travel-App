@@ -3,6 +3,7 @@ package com.sunasterisk.travelapp.data.models
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import kotlin.jvm.Throws
 
 data class Review(
     val author: String,

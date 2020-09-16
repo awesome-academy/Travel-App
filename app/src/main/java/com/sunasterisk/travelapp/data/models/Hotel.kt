@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import kotlin.jvm.Throws
 
 @Parcelize
 data class Hotel(
@@ -15,7 +16,9 @@ data class Hotel(
     var imageThumbHotel: String = "",
     var imageLargeHotel: String = "",
     var price: String = "",
-    var descriptionHotel: String = ""
+    var descriptionHotel: String = "",
+    var rating_count: Double = 0.0,
+    var type: String = ""
 ) : Parcelable {
     @Throws(JSONException::class)
     constructor(jsonObject: JSONObject) : this(
@@ -32,7 +35,9 @@ data class Hotel(
             .getJSONObject(LARGE_IMAGE)
             .getString(URL),
         jsonObject.getString(PRICE),
-        jsonObject.getString(DESCRIPTION)
+        jsonObject.getString(DESCRIPTION),
+        jsonObject.getDouble(RATING_COUNT),
+        jsonObject.getString(TYPE)
     )
 
     companion object {
@@ -47,6 +52,8 @@ data class Hotel(
         private const val URL = "url"
         private const val PRICE = "price"
         private const val DESCRIPTION = "description"
+        private const val RATING_COUNT = "rating"
+        private const val TYPE = "subcategory_type_label"
 
         fun jsonToArray(jsonArray: JSONArray): MutableList<Hotel> {
             val mutableList = mutableListOf<Hotel>()
@@ -63,7 +70,9 @@ data class Hotel(
                             name = hotelJSONObject.getString(NAME),
                             imageThumbHotel = thumbJSONObject.getString(URL),
                             location = hotelJSONObject.getString(LOCATION_STRING),
-                            price = hotelJSONObject.getString(PRICE)
+                            price = hotelJSONObject.getString(PRICE),
+                            rating_count = hotelJSONObject.getDouble(RATING_COUNT),
+                            type = hotelJSONObject.getString(TYPE)
                         )
                     )
                 } catch (jsonException: JSONException) {

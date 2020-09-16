@@ -5,6 +5,7 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
     </style>
 
     <style name="Widget.TravelApp.Toolbar" parent="Widget.AppCompat.Toolbar">
@@ -32,4 +33,11 @@
             @animator/anim_positive_button_state_list
         </item>
     </style>
+
+    <style name="RatingBar" parent="Theme.MaterialComponents">
+        <item name="colorControlNormal">@color/color_primary</item>
+        <item name="colorControlActivated">@color/color_yellow</item>
+        <item name="colorControlHighlight">@color/color_yellow</item>
+    </style>
+
 </resources>
