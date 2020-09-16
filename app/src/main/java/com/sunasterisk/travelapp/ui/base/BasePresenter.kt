@@ -4,7 +4,7 @@ import com.sunasterisk.travelapp.R
 
 abstract class BasePresenter<V : BaseContract.View<*>> : BaseContract.Presenter<V> {
 
-    private var view: V? = null
+    var view: V? = null
 
     protected val isViewAttached: Boolean
         get() = view != null
