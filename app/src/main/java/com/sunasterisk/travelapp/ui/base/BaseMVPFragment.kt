@@ -20,7 +20,7 @@ abstract class BaseMVPFragment<V : BaseContract.View<T>, T : BaseContract.Presen
     @Suppress("UNCHECKED_CAST")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.onAttach(this as V)
+        (this as? V)?.let { presenter.onAttach(it) }
     }
 
     override fun showProgressDialog() {
