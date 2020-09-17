@@ -6,8 +6,6 @@ interface BaseContract {
 
     interface View<T> {
 
-        fun setPresenter(presenter: T)
-
         fun showProgressDialog()
 
         fun dismissProgressDialog()
