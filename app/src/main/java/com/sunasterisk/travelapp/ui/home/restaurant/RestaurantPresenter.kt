@@ -10,16 +10,18 @@ class RestaurantPresenter(
 ) : BasePresenter<RestaurantContract.View>(), RestaurantContract.Presenter {
 
     override fun searchLocations(input: String) {
+        view?.showProgressDialog()
         locationRepository.searchLocationsByProperty(
             input,
             object : OnDataCallback<List<Location>> {
                 override fun onSuccess(data: List<Location>) {
                     view?.updateLocations(data)
-                    view?.showProgressDialog()
+                    view?.dismissProgressDialog()
                 }
 
                 override fun onError(throwable: Throwable) {
                     view?.onError(throwable.message)
+                    view?.dismissProgressDialog()
                 }
             })
     }

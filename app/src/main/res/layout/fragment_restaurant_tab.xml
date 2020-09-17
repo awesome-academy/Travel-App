@@ -6,7 +6,7 @@
     android:background="@color/color_accent">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardViewMealType"
+        android:id="@+id/cardViewFilterMeals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_16"
@@ -30,7 +30,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardViewRestaurantType"
+        android:id="@+id/cardViewFilterRestaurants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -38,7 +38,7 @@
         android:translationY="@dimen/dp_16"
         app:cardCornerRadius="@dimen/dp_4"
         app:cardElevation="0dp"
-        app:layout_anchor="@id/cardViewMealType"
+        app:layout_anchor="@id/cardViewFilterMeals"
         app:layout_anchorGravity="bottom">
 
         <TextView
@@ -53,7 +53,6 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:drawableEndCompat="@drawable/ic_down"
             app:drawableStartCompat="@drawable/ic_restaurant_type" />
-
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
@@ -65,7 +64,7 @@
         android:translationY="@dimen/dp_16"
         app:cardCornerRadius="@dimen/dp_4"
         app:cardElevation="0dp"
-        app:layout_anchor="@id/cardViewRestaurantType"
+        app:layout_anchor="@id/cardViewFilterRestaurants"
         app:layout_anchorGravity="bottom">
 
         <EditText
@@ -76,11 +75,12 @@
             android:drawableStart="@drawable/ic_location"
             android:drawablePadding="@dimen/dp_8"
             android:hint="@string/title_select_location"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionSearch"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="textAutoComplete"
             android:paddingHorizontal="@dimen/dp_8"
             android:paddingVertical="@dimen/dp_12"
+            android:singleLine="true"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -91,6 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:behavior_hideable="false"
-        app:layout_behavior="@string/bottom_sheet_behavior" />
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
