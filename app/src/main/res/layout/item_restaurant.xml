@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_16"
+    android:layout_marginBottom="@dimen/dp_16">
+
+    <ImageView
+        android:id="@+id/imageRestaurantItem"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_64"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_destination"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,2:3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRestaurantNameItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageRestaurantItem"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPriceRestaurant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ratingBarRestaurant"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantNameItem" />
+
+    <RatingBar
+        android:id="@+id/ratingBarRestaurant"
+        style="@android:style/Widget.Holo.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:isIndicator="true"
+        android:progressTint="@color/color_accent"
+        android:rating="2.5"
+        android:stepSize="0.1"
+        app:layout_constraintStart_toEndOf="@+id/imageRestaurantItem"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRestaurantNameItem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
