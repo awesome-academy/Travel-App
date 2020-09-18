@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/constraintLayoutListHotelTab"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="0dp">
@@ -26,7 +25,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButtonPersonPick"
-        style="@style/Widget.TravelApp.Button"
+        style="@style/Widget.TravelApp.Button.Tab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -40,7 +39,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButtonDateRangePick"
-        style="@style/Widget.TravelApp.Button"
+        style="@style/Widget.TravelApp.Button.Tab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -55,7 +54,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButtonLocationPick"
-        style="@style/Widget.TravelApp.Button"
+        style="@style/Widget.TravelApp.Button.Tab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

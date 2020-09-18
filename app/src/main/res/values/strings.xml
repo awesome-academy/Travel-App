@@ -18,6 +18,7 @@
     <string name="title_restaurant_type">Select restaurant</string>
     <string name="title_destination_front_layout">Explore properties by destination</string>
     <string name="title_destination">Aspen, United States</string>
+    <string name="title_detail">Detail</string>
     <plurals name="title_properties">
         <item quantity="other">%1$d available properties</item>
     </plurals>

@@ -27,8 +27,16 @@
     </style>
 
     <style name="Widget.TravelApp.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">@android:color/white</item>
-        <item name="backgroundTint">?attr/colorPrimaryDark</item>
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="backgroundTint">@color/color_purple</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/anim_positive_button_state_list
+        </item>
+    </style>
+
+    <style name="Widget.TravelApp.Button.Tab" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="backgroundTint">@color/color_accent</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/anim_positive_button_state_list
         </item>
@@ -38,6 +46,11 @@
         <item name="colorControlNormal">@color/color_primary</item>
         <item name="colorControlActivated">@color/color_yellow</item>
         <item name="colorControlHighlight">@color/color_yellow</item>
+    </style>
+
+    <style name="CollapsingToolbarLayoutExpandedTextStyle" parent="AppTheme">
+        <item name="android:textColor">@android:color/transparent</item>
+        <item name="android:textSize">0sp</item>
     </style>
 
 </resources>

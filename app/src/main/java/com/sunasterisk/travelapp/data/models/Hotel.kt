@@ -9,7 +9,7 @@ import kotlin.jvm.Throws
 
 @Parcelize
 data class Hotel(
-    val id: String,
+    val id: String = "",
     val name: String = "",
     val location: String = "",
     val address: String = "",
@@ -18,7 +18,8 @@ data class Hotel(
     var price: String = "",
     var descriptionHotel: String = "",
     var rating_count: Double = 0.0,
-    var type: String = ""
+    var type: String = "",
+    val listImage: MutableList<String> = mutableListOf()
 ) : Parcelable {
     @Throws(JSONException::class)
     constructor(jsonObject: JSONObject) : this(

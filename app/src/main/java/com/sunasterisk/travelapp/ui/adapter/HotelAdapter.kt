@@ -6,9 +6,9 @@ import com.sunasterisk.travelapp.R
 import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.ui.base.BaseRecyclerAdapter
 
-class HotelAdapter : BaseRecyclerAdapter<Hotel, HotelViewHolder>() {
-
-    var onItemClick: (Hotel) -> Unit = { _, -> }
+class HotelAdapter(
+    private val onItemClick: (Hotel) -> Unit
+) : BaseRecyclerAdapter<Hotel, HotelViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder {
         val itemView =

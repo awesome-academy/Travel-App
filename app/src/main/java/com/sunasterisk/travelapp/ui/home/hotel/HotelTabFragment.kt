@@ -15,7 +15,6 @@ import com.sunasterisk.travelapp.utils.location
 import com.sunasterisk.travelapp.utils.screenHeight
 import kotlinx.android.synthetic.main.fragment_hotel_tab.*
 import kotlinx.android.synthetic.main.include_hotel_tab_front.*
-import kotlinx.android.synthetic.main.item_destination.*
 import java.util.*
 
 class HotelTabFragment private constructor() : BaseFragment(), View.OnClickListener {
