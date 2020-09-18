@@ -36,4 +36,21 @@
     <string name="title_restaurant_address">Restaurant in %s</string>
     <string name="title_hotel_address">Hotel in %s</string>
     <string name="title_location_address">Location in %s</string>
+    <string name="title_cost_restaurant">54$-60$</string>
+    <string name="title_price">Price</string>
+    <string name="title_rating">Rating</string>
+    <string name="title_sort_by">Sort By</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_search">Search</string>
+    <string name="title_sort_filter">Sort and filter</string>
+    <string name="title_max_price">Max Price</string>
+    <string name="title_min_rating">Min Rating</string>
+    <string name="title_reset">Reset</string>
+    <string name="title_current_price">%d$</string>
+    <string name="title_max_price_dolar">999$</string>
+    <string name="title_five_hundreds_dolar">500$</string>
+    <string name="title_current_rating">%d</string>
+    <string name="title_five_star">5</string>
+    <string name="title_three_star">3</string>
+    <string name="title_restaurant_near">Explore restaurants near %s</string>
 </resources>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="integer_500">500</integer>
     <integer name="integer_1">1</integer>
+    <integer name="integer_3">3</integer>
+    <integer name="integer_5">5</integer>
+    <integer name="integer_500">500</integer>
+    <integer name="integer_999">999</integer>
 </resources>
