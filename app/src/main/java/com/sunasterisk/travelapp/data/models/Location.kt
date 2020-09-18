@@ -90,7 +90,8 @@ data class Location(
         private const val GEO_DESCRIPTION = "geo_description"
         private const val CATEGORY_COUNT = "category_counts"
         private const val TOTAL = "total"
-        private const val TYPE_GEO = "geos"
+
+        const val TYPE_GEO = "geos"
         const val TYPE_RESTAURANT = "restaurants"
         const val TYPE_HOTEL = "lodging"
         const val TABLE_NAME = "location"

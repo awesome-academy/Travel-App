@@ -2,6 +2,8 @@ package com.sunasterisk.travelapp.utils
 
 import android.graphics.Point
 import android.view.View
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 
 fun View.showSnackBar(message: String, duration: Int) {
@@ -20,4 +22,10 @@ fun View.show() {
 
 fun View.gone() {
     this.visibility = View.GONE
+}
+
+fun ImageView.setImageUrl(url: String) {
+    Glide.with(context)
+        .load(url)
+        .into(this)
 }

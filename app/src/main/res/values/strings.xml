@@ -32,4 +32,7 @@
     <string name="title_button_cancel">Cancel</string>
     <string name="title_transition_type_y">translationY</string>
     <string name="title_cost">54$</string>
+    <string name="title_restaurant_address">Restaurant in %s</string>
+    <string name="title_hotel_address">Hotel in %s</string>
+    <string name="title_location_address">Location in %s</string>
 </resources>
