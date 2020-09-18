@@ -7,7 +7,7 @@ import com.sunasterisk.travelapp.data.models.Location
 import com.sunasterisk.travelapp.ui.base.BaseRecyclerAdapter
 
 class HotelDestinationsAdapter(
-    var onItemClick: (Location) -> Unit
+    private val onItemClick: (Location) -> Unit
 ) : BaseRecyclerAdapter<Location, HotelDestinationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelDestinationViewHolder {

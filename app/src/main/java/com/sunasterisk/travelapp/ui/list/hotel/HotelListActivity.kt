@@ -2,9 +2,11 @@ package com.sunasterisk.travelapp.ui.list.hotel
 
 import android.view.MenuItem
 import com.sunasterisk.travelapp.R
+import com.sunasterisk.travelapp.data.models.Hotel
 import com.sunasterisk.travelapp.ui.adapter.HotelAdapter
 import com.sunasterisk.travelapp.ui.base.BaseActivity
 import com.sunasterisk.travelapp.ui.custom.TabName
+import com.sunasterisk.travelapp.ui.detail.HotelDetailActivity
 import com.sunasterisk.travelapp.ui.home.hotel.HotelTabFragment.Companion.EXTRA_DATE_RANGE_TAB
 import com.sunasterisk.travelapp.ui.home.hotel.HotelTabFragment.Companion.EXTRA_LOCATION_TAB
 import com.sunasterisk.travelapp.ui.home.hotel.HotelTabFragment.Companion.EXTRA_PERSON_TAB
@@ -16,7 +18,7 @@ import kotlinx.android.synthetic.main.include_hotel_list_front.*
 class HotelListActivity : BaseActivity() {
 
     override val layoutResource = R.layout.activity_hotel_list
-    private val adapter: HotelAdapter = HotelAdapter()
+    private val adapter: HotelAdapter = HotelAdapter { item -> onClick(item) }
 
     override fun initComponents() {
         setupToolbar()
@@ -56,5 +58,9 @@ class HotelListActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) finish()
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun onClick(item: Hotel) {
+        HotelDetailActivity.getIntent(this, item).let(this::startActivity)
     }
 }
