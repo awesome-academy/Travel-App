@@ -2,17 +2,26 @@ package com.sunasterisk.travelapp.ui.base
 
 import android.app.Dialog
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.sunasterisk.travelapp.R
 import com.sunasterisk.travelapp.utils.createProgressDialog
 import com.sunasterisk.travelapp.utils.showSnackBar
 import com.sunasterisk.travelapp.utils.showToast
 
-abstract class BaseMVPActivity<T> : AppCompatActivity(), BaseContract.View<T> {
+abstract class BaseMVPActivity<V : BaseContract.View<T>, T : BaseContract.Presenter<V>> :
+    BaseActivity(), BaseContract.View<T> {
+
+    protected abstract val presenter: T
 
     private var progressDialog: Dialog? = null
+
+    @Suppress("UNCHECKED_CAST")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        (this as? V)?.let { presenter.onAttach(it) }
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)

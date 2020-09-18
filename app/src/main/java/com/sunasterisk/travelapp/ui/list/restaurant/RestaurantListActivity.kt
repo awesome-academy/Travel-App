@@ -8,11 +8,18 @@ import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import com.sunasterisk.travelapp.R
 import com.sunasterisk.travelapp.data.models.Location
-import com.sunasterisk.travelapp.ui.base.BaseActivity
+import com.sunasterisk.travelapp.data.models.Restaurant
+import com.sunasterisk.travelapp.di.Injector
+import com.sunasterisk.travelapp.ui.base.BaseMVPActivity
+import com.sunasterisk.travelapp.ui.list.restaurant.RestaurantListContract.View
+import com.sunasterisk.travelapp.ui.list.restaurant.RestaurantListContract.Presenter
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 
-class RestaurantListActivity : BaseActivity() {
+class RestaurantListActivity : BaseMVPActivity<View, Presenter>(), View {
 
+    override val presenter by lazy {
+        RestaurantListPresenter(Injector.getRestaurantRepository(this))
+    }
     override val layoutResource get() = R.layout.activity_restaurant_list
 
     override fun initComponents() {
@@ -28,11 +35,15 @@ class RestaurantListActivity : BaseActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            if(item.itemId == R.id.filter) {
-                val dialog = FilterDialogFragment()
-                dialog.show(supportFragmentManager, FilterDialogFragment::class.simpleName)
-            }
+        if (item.itemId == R.id.filter) {
+            FilterDialogFragment()
+                .show(supportFragmentManager, FilterDialogFragment::class.simpleName)
+        }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun updateRestaurants(list: List<Restaurant>) {
+        dismissProgressDialog()
     }
 
     private fun setupToolbar() {
