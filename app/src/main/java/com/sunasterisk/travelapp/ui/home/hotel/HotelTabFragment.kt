@@ -19,9 +19,9 @@ import java.util.*
 
 class HotelTabFragment private constructor() : BaseFragment(), View.OnClickListener {
 
-    private val adapter = HotelDestinationsAdapter { item -> onClick(item) }
-
     override val layoutResource get() = R.layout.fragment_hotel_tab
+
+    private val adapter = HotelDestinationsAdapter { item -> onClick(item) }
 
     override fun initComponents() {
         configureFrontLayout()

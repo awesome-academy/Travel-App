@@ -5,4 +5,5 @@
     <integer name="integer_5">5</integer>
     <integer name="integer_500">500</integer>
     <integer name="integer_999">999</integer>
+    <item name="float_0.75" format="float" type="dimen">0.75</item>
 </resources>

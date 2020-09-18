@@ -1,5 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
@@ -27,8 +26,9 @@
     </style>
 
     <style name="Widget.TravelApp.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">@color/color_primary</item>
-        <item name="backgroundTint">@color/color_purple</item>
+        <item name="android:backgroundTint">@color/color_purple</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="backgroundTint">?attr/colorPrimaryDark</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/anim_positive_button_state_list
         </item>
@@ -62,5 +62,16 @@
         <item name="android:maxLines">1</item>
         <item name="android:drawablePadding">@dimen/dp_10</item>
         <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Widget.Travel.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextAppearance.Travel.TextInputLayout.HintText</item>
+        <item name="hintTextColor">@color/color_accent</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="boxStrokeColor">@color/color_pink</item>
+    </style>
+
+    <style name="TextAppearance.Travel.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 </resources>

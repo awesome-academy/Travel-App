@@ -4,6 +4,8 @@ import android.graphics.Point
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import android.widget.ImageButton
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 
 fun View.showSnackBar(message: String, duration: Int) {
@@ -29,3 +31,8 @@ fun ImageView.setImageUrl(url: String) {
         .load(url)
         .into(this)
 }
+
+fun Toolbar.getToolbarNavigationButton() =
+    (0 until this.childCount).asSequence()
+        .map(this::getChildAt)
+        .firstOrNull { it is ImageButton }
