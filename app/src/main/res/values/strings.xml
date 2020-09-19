@@ -17,6 +17,7 @@
     <string name="title_meal_type">Select meal</string>
     <string name="title_restaurant_type">Select restaurant</string>
     <string name="title_destination_front_layout">Explore properties by destination</string>
+    <string name="title_traveler_front_layout">Traveler Information</string>
     <string name="title_destination">Aspen, United States</string>
     <string name="title_detail">Detail</string>
     <plurals name="title_properties">
@@ -24,6 +25,9 @@
     </plurals>
     <plurals name="title_filter_travelers">
         <item quantity="other">%1$d adults, %2$d children</item>
+    </plurals>
+    <plurals name="title_check_in_steps">
+        <item quantity="other"> %1$d/%2$d </item>
     </plurals>
     <string name="title_type">Apartment</string>
     <string name="title_adults">Adults</string>
@@ -53,4 +57,12 @@
     <string name="title_five_star">5</string>
     <string name="title_three_star">3</string>
     <string name="title_restaurant_near">Explore restaurants near %s</string>
+    <string name="msg_name_hint">Full Name</string>
+    <string name="msg_email_hint">Email</string>
+    <string name="msg_phone_hint">Phone</string>
+    <string name="msg_birth_day_hint">dd/mm/yyyy</string>
+    <string name="msg_continue">Continue</string>
+    <string name="msg_check_in">Check In</string>
+    <string name="title_step">1/3</string>
+    <string name="title_view_pager_field">mScroller</string>
 </resources>

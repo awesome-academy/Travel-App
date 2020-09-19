@@ -9,7 +9,6 @@ import com.sunasterisk.travelapp.ui.base.BaseRecyclerAdapter
 class HotelAdapter(
     private val onItemClick: (Hotel) -> Unit
 ) : BaseRecyclerAdapter<Hotel, HotelViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotelViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.item_hotel, parent, false)

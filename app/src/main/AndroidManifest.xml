@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sunasterisk.travelapp">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -16,6 +14,7 @@
         <activity android:name=".ui.list.hotel.HotelListActivity" />
         <activity android:name=".ui.list.restaurant.RestaurantListActivity" />
         <activity android:name=".ui.detail.HotelDetailActivity" />
+        <activity android:name=".ui.checkin.CheckInActivity" />
         <activity
             android:name=".ui.main.MainActivity"
             android:windowSoftInputMode="adjustPan">
@@ -26,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
