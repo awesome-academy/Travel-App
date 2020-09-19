@@ -11,10 +11,10 @@ data class Restaurant(
     val address: String = "",
     val email: String = "",
     val phone: String = "",
-    val price: String = "",
+    val price: String = "\$60 - \$80",
     var imageThumbRestaurant: String = "",
     var imageLargeRestaurant: String = "",
-    var ratingCount: Double = 0.0,
+    var ratingCount: Float = 0.0f,
     var rating: Rating = Rating(),
     var descriptionRestaurant: String = "",
     var reviews: MutableList<Review> = mutableListOf()
@@ -39,7 +39,7 @@ data class Restaurant(
             .getJSONObject(IMAGES)
             .getJSONObject(LARGE_IMAGE)
             .getString(URL),
-        restaurantObject.getString(RATING_COUNT).toDouble(),
+        restaurantObject.getString(RATING_COUNT).toFloat(),
         Rating(restaurantObject.getJSONObject(RATING)),
         restaurantObject.getString(DESCRIPTION),
         Review.jsonToArray(restaurantObject.getJSONArray(REVIEWS))
@@ -78,7 +78,8 @@ data class Restaurant(
                             name = restaurantJSONObject.getString(NAME),
                             imageThumbRestaurant = thumbJSONObject.getString(URL),
                             location = restaurantJSONObject.getString(LOCATION_STRING),
-                            ratingCount = restaurantJSONObject.getString(RATING_COUNT).toDouble()
+                            ratingCount = restaurantJSONObject.getString(RATING_COUNT).toFloat(),
+                            price = restaurantJSONObject.getString(PRICE)
                         )
                     )
                 } catch (jsonException: JSONException) {
