@@ -40,7 +40,6 @@
     <string name="title_restaurant_address">Restaurant in %s</string>
     <string name="title_hotel_address">Hotel in %s</string>
     <string name="title_location_address">Location in %s</string>
-    <string name="title_cost_restaurant">54$-60$</string>
     <string name="title_price">Price</string>
     <string name="title_rating">Rating</string>
     <string name="title_sort_by">Sort By</string>

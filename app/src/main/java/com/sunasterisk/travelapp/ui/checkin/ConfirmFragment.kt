@@ -5,7 +5,7 @@ import com.sunasterisk.travelapp.ui.base.BaseFragment
 
 class ConfirmFragment : BaseFragment() {
 
-    override val layoutResource get() = R.layout.fragment_traveler_infor
+    override val layoutResource get() = R.layout.fragment_confirm
 
     override fun initComponents() = Unit
 

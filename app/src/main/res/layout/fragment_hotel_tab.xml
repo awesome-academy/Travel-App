@@ -72,6 +72,7 @@
         app:layout_anchorGravity="bottom">
 
         <EditText
+            android:id="@+id/editTextFilterLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -79,7 +80,9 @@
             android:drawableStart="@drawable/ic_local_hotel"
             android:drawablePadding="@dimen/dp_8"
             android:hint="@string/title_select_location"
-            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="textAutoComplete"
             android:padding="@dimen/dp_12"
             android:paddingLeft="@dimen/dp_8"
             android:paddingRight="@dimen/dp_8"

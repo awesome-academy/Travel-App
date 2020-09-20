@@ -6,4 +6,6 @@
     <integer name="integer_500">500</integer>
     <integer name="integer_999">999</integer>
     <item name="float_0.75" format="float" type="dimen">0.75</item>
+    <integer name="integer_10">10</integer>
+    <integer name="integer_0">0</integer>
 </resources>

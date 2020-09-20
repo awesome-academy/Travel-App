@@ -39,7 +39,7 @@ class RestaurantTabAdapter(private var onItemClick: (Location) -> Unit) :
                 val textLocation =
                     resources.getString(R.string.title_location_address, itemData.location)
                 textViewDestinationNameItem.text = itemData.name
-                textViewPropertiesItem.text = when (itemData.type) {
+                textViewResultType.text = when (itemData.type) {
                     Location.TYPE_GEO -> textGeo
                     Location.TYPE_RESTAURANT -> textRestaurant
                     Location.TYPE_HOTEL -> textHotel

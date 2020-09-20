@@ -2,10 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.home.hotel.TravelersPickDialogFragment">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="0dp"
@@ -28,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/imageViewAdultMinus"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
@@ -38,12 +37,14 @@
             app:tint="@android:color/black" />
 
         <TextView
+            android:id="@+id/textViewPickAdult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/title_count_number" />
 
         <ImageView
+            android:id="@+id/imageViewAdultPlus"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
@@ -88,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/viewDivider">
 
         <ImageView
+            android:id="@+id/imageViewChildrenMinus"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
@@ -98,12 +100,14 @@
             app:tint="@android:color/black" />
 
         <TextView
+            android:id="@+id/textViewPickChildren"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/title_count_number" />
 
         <ImageView
+            android:id="@+id/imageViewChildrenPlus"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_centerVertical="true"
@@ -128,6 +132,7 @@
         app:layout_constraintTop_toBottomOf="@id/cardViewCounterChildrenPick" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonApply"
         style="@style/Widget.TravelApp.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -138,6 +143,7 @@
         app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_64"
@@ -145,5 +151,4 @@
         android:text="@string/title_button_cancel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewDivider2" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

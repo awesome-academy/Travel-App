@@ -16,9 +16,7 @@ class HotelDestinationViewHolder(
         super.onBindData(itemData)
         with(itemView) {
             textViewDestinationNameItem.text = itemData.name
-            textViewPropertiesItem.text =
-                resources.getQuantityString(R.plurals.title_properties,
-                    resources.getInteger(R.integer.integer_1), itemData.propertiesNumber)
+            textViewResultType.text = itemData.type
             Glide.with(context).load(itemData.thumb).into(imageDestinationItem)
         }
     }

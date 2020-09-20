@@ -26,8 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:clickable="true"
+            android:focusable="true"
             android:paddingLeft="@dimen/dp_16"
             android:paddingRight="@dimen/dp_16"
+            android:contentDescription="@null"
             android:src="@drawable/ic_step" />
 
         <TextView

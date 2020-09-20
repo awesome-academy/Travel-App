@@ -40,7 +40,7 @@ object HttpUtils {
                 null
             }
         }
-        httpURLConnection?.disconnect()
+        httpURLConnection.disconnect()
         return result
     }
 }
